@@ -1,2 +1,2 @@
 # react-lifecycle
-Discover React's lifecycle
+Discover React lifecycle
