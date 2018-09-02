@@ -6,6 +6,7 @@
     1. [getDerivedStateFromProps](#getderivedstatefromprops)
     1. [componentDidMount](#componentdidmount)
 1. [Обновление компонента](#Обновление-компонента)
+1. [deprecated](#deprecated)
 
 ## Жизненный цикл
 ![lifecycle](lifecycle.jpeg)
@@ -33,6 +34,13 @@ ___
 #### componentDidMount
 
 ## Обновление компонента
+
+## deprecated
+
+* componentWillMount
+* componentWillReceiveProps(nextProps)
+* componentWillUpdate(nextProps, nextState)
+
 
 
 
