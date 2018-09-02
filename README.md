@@ -3,8 +3,8 @@
 1. [Жизненный цикл](#Жизненный-цикл)
 1. [Создание и иницилизация компонента](#Создание-и-иницилизация-компонента)
     1. [constructor](#constructor)
-    1. [getDerivedStateFromProps](#getDerivedStateFromProps)
-    1. [componentDidMount](#componentDidMount)
+    1. [getDerivedStateFromProps](#getderivedstatefromprops)
+    1. [componentDidMount](#componentdidmount)
 1. [Обновление компонента](#Обновление-компонента)
 
 ## Жизненный цикл
@@ -31,4 +31,8 @@ ___
 
 #### getDerivedStateFromProps
 #### componentDidMount
+
+## Обновление компонента
+
+
 
