@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { BrowserRouter, Redirect, Route } from "react-router-dom";
+import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import Mounting from "./routes/Mounting";
 
 class App extends Component {
@@ -8,8 +8,10 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="App">
-          <Route path="/mounting" component={Mounting}/>
-          <Redirect to="/mounting"/>
+          <Switch>
+            <Route path="/mounting" component={Mounting}/>
+            <Redirect to="/mounting"/>
+          </Switch>
         </div>
       </BrowserRouter>
     );

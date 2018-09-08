@@ -12,6 +12,7 @@ class Mounting extends Component {
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
+    // run on init // update props // setState
     return null;
   }
 
@@ -20,7 +21,10 @@ class Mounting extends Component {
   };
 
   render() {
-    return null;
+    console.log(this.state)
+    return (
+      <div>Mounting</div>
+    );
   }
 }
 
