@@ -11,12 +11,12 @@
 
 ## Жизненный цикл
 ![lifecycle](lifecycle.jpeg)
-___
+---
 ## Создание и иницилизация компонента
 1. constructor
 1. getDerivedStateFromProps
 1. componentDidMount
-
+---
 #### constructor
 ![constructor](imgs/constructor.png)
 
@@ -30,20 +30,20 @@ ___
 
 **Избегайте**
 * Копирования свойств props в state, они будут доступны и так. Исключением можно считать случай, когда мы хотим игнорировать обновления props
-
+---
 #### static getDerivedStateFromProps
 * Статическая функция (нет доступа к this)
 * Синхронизируйте ваши props и state (замена устаревшему componentWillReceiveProps(nextProps))
 * Возращает объект или null. Возвращаемый объект «вливается в существующее состояние компонента.
 * Отрабатывает при инициализации компонента, изменении props или setState (с 16.4.2)
-
+---
 #### render
 **Нужно**
 * Определить, каким будет DOM
 
 **Нельзя**
 * Не выполняйте this.setState - приведет к зацикливанию
-
+---
 #### componentDidMount
 
 ## Обновление компонента
