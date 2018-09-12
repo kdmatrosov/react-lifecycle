@@ -36,11 +36,11 @@ class Demo extends Component {
   };
 
   getSnapshotBeforeUpdate = (prevProps, prevState) => {
-
+    return null;
   };
 
   componentDidUpdate = (prevProps, prevState, snapshot) => {
-
+    console.log(1)
   };
 
   render() {

@@ -9,8 +9,8 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Switch>
-            <Route path="/demo" component={Demo}/>
-            <Redirect to="/demo"/>
+            <Route path="/demo" component={Demo} />
+            <Redirect to="/demo" />
           </Switch>
         </div>
       </BrowserRouter>
