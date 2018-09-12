@@ -7,6 +7,9 @@
     1. [render](#render)
     1. [componentDidMount](#componentdidmount)
 1. [Обновление компонента](#обновление-компонента)
+    1. [shouldComponentUpdate](#shouldcomponentupdate)
+    1. [getSnapshotBeforeUpdate](#getsnapshotbeforeupdate)
+    1. [componentDidUpdate](#componentdidupdate)
 1. [deprecated](#deprecated)
 1. [Полезные ссылки](#полезные-ссылки)
 
@@ -56,6 +59,12 @@
 * Не стоит вызывать ```this.setState```, так как это приведет к перерисовке
 
 ## Обновление компонента
+
+#### shouldComponentUpdate
+
+#### getSnapshotBeforeUpdate
+
+#### componentDidUpdate
 
 ## deprecated
 

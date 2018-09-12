@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
-import Mounting from "./routes/Mounting";
+import Demo from "./routes/Demo";
 
 class App extends Component {
   render() {
@@ -9,8 +9,8 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Switch>
-            <Route path="/mounting" component={Mounting}/>
-            <Redirect to="/mounting"/>
+            <Route path="/demo" component={Demo}/>
+            <Redirect to="/demo"/>
           </Switch>
         </div>
       </BrowserRouter>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import './demo.css';
 
-class Mounting extends Component {
+class Demo extends Component {
   constructor(props) {
     super(props);
     this.initComponentData = 'secret';
@@ -22,11 +23,12 @@ class Mounting extends Component {
   };
 
   render() {
-    console.log(this.state)
     return (
-      <div>Mounting</div>
+      <div className="demo">
+        <div className="movable-window"></div>
+      </div>
     );
   }
 }
 
-export default Mounting;
+export default Demo;
