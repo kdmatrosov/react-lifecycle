@@ -10,6 +10,7 @@
     1. [shouldComponentUpdate](#shouldcomponentupdate)
     1. [getSnapshotBeforeUpdate](#getsnapshotbeforeupdate)
     1. [componentDidUpdate](#componentdidupdate)
+1. [componentDidCatch](#componentdidcatch)
 1. [deprecated](#deprecated)
 1. [Полезные ссылки](#полезные-ссылки)
 
@@ -36,7 +37,7 @@
 **Избегайте**
 * Копирования свойств ```props``` в ```state```, они будут доступны и так. Исключением можно считать случай, когда мы хотим игнорировать обновления ```props```
 ---
-#### static getDerivedStateFromProps
+#### static getDerivedStateFromProps(props, state)
 * Статическая функция (нет доступа к ```this```)
 * Синхронизируйте ваши ```props``` и ```state``` (замена устаревшему componentWillReceiveProps(nextProps))
 * Возращает объект или ```null```. Возвращаемый объект «вливается в существующее состояние компонента.
@@ -65,6 +66,8 @@
 #### getSnapshotBeforeUpdate
 
 #### componentDidUpdate
+
+## componentDidCatch
 
 ## deprecated
 

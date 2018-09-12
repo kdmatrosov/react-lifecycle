@@ -35,6 +35,14 @@ class Demo extends Component {
     }
   };
 
+  getSnapshotBeforeUpdate = (prevProps, prevState) => {
+
+  };
+
+  componentDidUpdate = (prevProps, prevState, snapshot) => {
+
+  };
+
   render() {
     return (
       <div className="demo">
