@@ -19,13 +19,26 @@ class Demo extends Component {
   }
 
   componentDidMount = () => {
-
+    const movableWindow = this.movableWindow.current;
+    function moveAt(e) {
+      movableWindow.style.left = e.pageX + 'px';
+      movableWindow.style.top = e.pageY + 'px';
+    }
+    movableWindow.onmousedown = function (e) {
+      document.onmousemove = function (e) {
+        moveAt(e);
+      }
+      movableWindow.onmouseup = function () {
+        document.onmousemove = null;
+        movableWindow.onmouseup = null;
+      }
+    }
   };
 
   render() {
     return (
       <div className="demo">
-        <div className="movable-window"></div>
+        <div className="movable-window" ref={this.movableWindow}></div>
       </div>
     );
   }
