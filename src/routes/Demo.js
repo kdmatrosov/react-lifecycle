@@ -35,6 +35,10 @@ class Demo extends Component {
     }
   };
 
+  shouldComponentUpdate = (nextProps, nextState) => {
+    return nextState.initialValue === this.state.initialValue;
+  };
+
   getSnapshotBeforeUpdate = (prevProps, prevState) => {
     return null;
   };
