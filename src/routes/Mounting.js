@@ -7,6 +7,7 @@ class Mounting extends Component {
     this.state = {
       initialValue: 'data'
     };
+    this.movableWindow = React.createRef();
 
     // bind your functions
   }
