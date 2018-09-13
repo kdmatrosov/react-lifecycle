@@ -8,7 +8,6 @@ class Demo extends Component {
     this.state = {
       initialValue: 'data',
       date: null,
-      blocks: [],
     };
     this.movableWindow = React.createRef();
     this.showDate = null;
@@ -35,7 +34,9 @@ class Demo extends Component {
         movableWindow.onmouseup = null;
       }
     };
-    this.showDate = setInterval(() => this.setState((prevState) => ({ date: new Date(), blocks: prevState.blocks.concat([new Date().toString()]) })), 1000);
+    this.showDate = setInterval(() => this.setState((prevState) => ({ date: new Date() }), () => {
+      document.getElementById('for-blocks').insertAdjacentHTML("afterBegin", "<div class='block'>" + new Date() + "</div>")
+    }), 1000);
   }
 
   shouldComponentUpdate = (nextProps, nextState) => {
@@ -58,7 +59,7 @@ class Demo extends Component {
     const movableWindow = <div className="movable-window" ref={this.movableWindow}></div>;
     return (
       <div className="demo">
-        {this.state.blocks.map(i => <div className="block" key={i}>{i}</div>)}
+        <div id="for-blocks"></div>
         {movableWindow}
       </div>
     );
