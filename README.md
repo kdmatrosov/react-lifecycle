@@ -15,7 +15,7 @@
 1. [deprecated](#deprecated)
     1. [Mounting process](#mounting-process)
     1. [Updating process](#updating-process)
-1. [Полезные ссылки](#полезные-ссылки)
+1. [Полезные ссылки](#Полезные-ссылки)
 
 ## Жизненный цикл
 ![lifecycle](lifecycle.jpeg)
