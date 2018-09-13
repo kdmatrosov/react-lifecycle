@@ -1,12 +1,12 @@
 ### Исследуем React lifecycle
 ### Содержание
-1. [Жизненный цикл](#жизненный-цикл)
-1. [Создание и иницилизация компонента](#создание-и-иницилизация-компонента)
+1. [Жизненный цикл](#Жизненный-цикл)
+1. [Создание и иницилизация компонента](#Создание-и-иницилизация-компонента)
     1. [constructor](#constructor)
     1. [static getDerivedStateFromProps](#static-getderivedstatefromprops)
     1. [render](#render)
     1. [componentDidMount](#componentdidmount)
-1. [Обновление компонента](#обновление-компонента)
+1. [Обновление компонента](#Обновление-компонента)
     1. [shouldComponentUpdate](#shouldcomponentupdate)
     1. [getSnapshotBeforeUpdate](#getsnapshotbeforeupdate)
     1. [componentDidUpdate](#componentdidupdate)
