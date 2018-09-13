@@ -45,10 +45,16 @@ class Demo extends Component {
 
   getSnapshotBeforeUpdate = (prevProps, prevState) => {
     // use to keep state of uncontrolled components
-    return { scroll: document.documentElement.scrollTop || document.body.scrollTop };
+    const blocks = document.getElementById('for-blocks');
+    return blocks.scrollHeight - blocks.scrollTop;;
   };
 
-  componentDidUpdate = (prevProps, prevState, { scroll = 0 }) => {
+  componentDidUpdate = (prevProps, prevState, scroll = 0) => {
+    if (scroll) {
+      const blocks = document.getElementById('for-blocks');
+      console.log(blocks.scrollHeight - scroll, blocks.scrollTop)
+      blocks.scrollTop = blocks.scrollHeight - scroll;
+    }
   };
 
   componentWillUnmount = () => {

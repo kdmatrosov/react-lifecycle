@@ -4,6 +4,7 @@
     background-color: #f1f1f1;
     padding: 32px;
 }
+
 .movable-window {
     position: absolute;
     left: 50%;
@@ -13,14 +14,22 @@
     margin: -50px 0 0 -50px;
     background-color: #fff;
 }
-.movable-window:hover{
+
+.movable-window:hover {
     cursor: pointer;
 }
 
-.movable-window.--test{
+.movable-window.--test {
     margin: -100px 0 0 0;
+}
+
+#for-blocks {
+    max-height: 500px;
+    overflow: auto;
 }
 
 .block {
     padding: 16px;
+    background-color: #fff;
+    border-bottom: 1px solid #909090;
 }
