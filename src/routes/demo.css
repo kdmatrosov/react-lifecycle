@@ -2,6 +2,12 @@
     position: relative;
     height: 100%;
     background-color: #f1f1f1;
+    padding: 32px;
+}
+.demo-preload-date {
+    position: relative;
+    height: 100%;
+    background-color: #909090;
 }
 .movable-window {
     position: absolute;
@@ -14,4 +20,8 @@
 }
 .movable-window:hover{
     cursor: pointer;
+}
+
+.movable-window.--test{
+    margin: -100px 0 0 0;
 }
