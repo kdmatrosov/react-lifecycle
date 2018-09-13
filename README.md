@@ -47,7 +47,7 @@
 **Можно**
 * Синхронизируйте ваши ```props``` и ```state``` (замена устаревшему componentWillReceiveProps(nextProps)).
 
----------------------
+---
 #### render
 **Нужно**
 * Определить, каким будет ```DOM```
@@ -64,7 +64,7 @@
 
 **Не рекомендуется**
 * Не стоит вызывать ```this.setState```, так как это приведет к перерисовке
-
+---
 ## Обновление компонента
 
 #### shouldComponentUpdate
@@ -76,18 +76,18 @@
 
 **Нельзя**
 * Не выполняйте ```this.setState``` - приведет к зацикливанию
-
+---
 #### getSnapshotBeforeUpdate
 **Можно**
 * Передать в componentDidUpdate третьим параметром данные. Те свойства 
 
 **Нельзя**
 * Не выполняйте ```this.setState``` - приведет к зацикливанию
-
+---
 #### componentDidUpdate
 **Нельзя**
 * Не выполняйте ```this.setState``` - приведет к зацикливанию
-
+---
 ## componentWillUnmount
 **Нужно** 
 * Удалить все назначенные счетчики/"листенеры"...
@@ -95,9 +95,9 @@
 
 **Нельзя**
 * Не выполняйте ```this.setState```
-
+---
 ## componentDidCatch
-
+---
 ## deprecated
 
 * componentWillMount
@@ -109,7 +109,7 @@
 * UNSAFE_componentWillMount
 * UNSAFE_componentWillUpdate
 * UNSAFE_componentWillReceiveProps
-
+---
 #### Mounting process
 В каком порядке вызываются методы
 ```js
@@ -119,7 +119,7 @@ UNSAFE_componentWillMount()
 render()
 componentDidMount()
 ```
-
+---
 #### Updating process
 В каком порядке вызываются методы
 ```js
@@ -131,7 +131,7 @@ render()
 getSnapshotBeforeUpdate()
 componentDidUpdate()
 ```
-
+---
 ## Полезные ссылки
 
 * [Understanding React — React 16.3 + Component life-cycle](https://medium.com/@baphemot/understanding-react-react-16-3-component-life-cycle-23129bc7a705)
