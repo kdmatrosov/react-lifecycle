@@ -12,6 +12,8 @@
     1. [componentDidUpdate](#componentdidupdate)
 1. [componentDidCatch](#componentdidcatch)
 1. [deprecated](#deprecated)
+    1. [Mounting process](#mounting-process)
+    1. [Updating process](#updating-process)
 1. [Полезные ссылки](#полезные-ссылки)
 
 ## Жизненный цикл
@@ -62,10 +64,25 @@
 ## Обновление компонента
 
 #### shouldComponentUpdate
+Возвращает true/false. При ```false``` процесс обновления останавливается. 
+При наследовании от ```PureComponent``` от метод уже реализован и использует ```swallowEqual```
+
+**Можно**
+* Определить свои правила обновления компонента
+
+**Нельзя**
+* Не выполняйте ```this.setState``` - приведет к зацикливанию
 
 #### getSnapshotBeforeUpdate
+**Можно**
+* Передать в componentDidUpdate третьим параметром данные. Те свойства 
+
+**Нельзя**
+* Не выполняйте ```this.setState``` - приведет к зацикливанию
 
 #### componentDidUpdate
+**Нельзя**
+* Не выполняйте ```this.setState``` - приведет к зацикливанию
 
 ## componentDidCatch
 
@@ -81,6 +98,27 @@
 * UNSAFE_componentWillUpdate
 * UNSAFE_componentWillReceiveProps
 
+#### Mounting process
+В каком порядке вызываются методы
+```js
+constructor()
+static getDerivedStateFromProps()
+UNSAFE_componentWillMount()
+render()
+componentDidMount()
+```
+
+#### Updating process
+В каком порядке вызываются методы
+```js
+UNSAFE_componentWillReceiveProps()
+static getDerivedStateFromProps()
+shouldComponentUpdate()
+UNSAFE_componentWillUpdate()
+render()
+getSnapshotBeforeUpdate()
+componentDidUpdate()
+```
 
 ## Полезные ссылки
 
