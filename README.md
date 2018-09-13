@@ -10,6 +10,7 @@
     1. [shouldComponentUpdate](#shouldcomponentupdate)
     1. [getSnapshotBeforeUpdate](#getsnapshotbeforeupdate)
     1. [componentDidUpdate](#componentdidupdate)
+1. [componentWillUnmount](#componentwillunmount)
 1. [componentDidCatch](#componentdidcatch)
 1. [deprecated](#deprecated)
     1. [Mounting process](#mounting-process)
@@ -40,10 +41,12 @@
 * Копирования свойств ```props``` в ```state```, они будут доступны и так. Исключением можно считать случай, когда мы хотим игнорировать обновления ```props```
 ---
 #### static getDerivedStateFromProps(props, state)
-* Статическая функция (нет доступа к ```this```)
-* Синхронизируйте ваши ```props``` и ```state``` (замена устаревшему componentWillReceiveProps(nextProps))
-* Возращает объект или ```null```. Возвращаемый объект «вливается в существующее состояние компонента.
-* Отрабатывает при инициализации компонента, изменении props или setState (с ```16.4.2```)
+Статическая функция (нет доступа к ```this```), возращает объект или ```null```. Возвращаемый объект «вливается в существующее состояние компонента.
+Отрабатывает при инициализации компонента, изменении props или setState (с ```16.4.2```).
+
+**Можно**
+* Синхронизируйте ваши ```props``` и ```state``` (замена устаревшему componentWillReceiveProps(nextProps)).
+
 ---------------------
 #### render
 **Нужно**
@@ -54,6 +57,7 @@
 ---
 #### componentDidMount
 Сигнализирует о том, что компонент и все его дочерние компоненты отрисовались без ошибок
+
 **Можно**
 * Установить счетки/"листенеры"...
 * Выполнить сайд-эффекты (Вызовы AJAX и т.д.)
@@ -84,6 +88,7 @@
 **Нельзя**
 * Не выполняйте ```this.setState``` - приведет к зацикливанию
 
+## componentWillUnmount
 ## componentDidCatch
 
 ## deprecated
@@ -124,7 +129,7 @@ componentDidUpdate()
 
 * [Understanding React — React 16.3 + Component life-cycle](https://medium.com/@baphemot/understanding-react-react-16-3-component-life-cycle-23129bc7a705)
 * [UNSAFE_componentWillReceiveProps()](https://reactjs.org/docs/react-component.html#unsafe_componentwillreceiveprops)
-
+* [Easy Way to Understand React's Component Lifecycle Methods](https://www.youtube.com/watch?v=UPv-3SYRdZk)
 
 
 

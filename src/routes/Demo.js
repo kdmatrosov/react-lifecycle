@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 import './demo.css';
 
 class Demo extends Component {
-  showDate = null;
   constructor(props) {
     super(props);
     this.initComponentData = 'secret';
     this.state = {
       initialValue: 'data',
       date: null,
+      blocks: [],
     };
     this.movableWindow = React.createRef();
-
+    this.showDate = null;
     // bind your functions
   }
 
@@ -35,7 +35,7 @@ class Demo extends Component {
         movableWindow.onmouseup = null;
       }
     };
-    this.showDate = setInterval(() => this.setState({ date: new Date() }), 1000);
+    this.showDate = setInterval(() => this.setState((prevState) => ({ date: new Date(), blocks: prevState.blocks.concat([new Date().toString()]) })), 1000);
   }
 
   shouldComponentUpdate = (nextProps, nextState) => {
@@ -44,13 +44,10 @@ class Demo extends Component {
 
   getSnapshotBeforeUpdate = (prevProps, prevState) => {
     // use to keep state of uncontrolled components
-    const { left, top } = this.movableWindow.current.style;
-    return { left, top };
+    return { scroll: document.documentElement.scrollTop || document.body.scrollTop };
   };
 
-  componentDidUpdate = (prevProps, prevState, snapshot) => {
-    // Object.assign(this.movableWindow.current.style, snapshot);
-    console.log(snapshot)
+  componentDidUpdate = (prevProps, prevState, { scroll = 0 }) => {
   };
 
   componentWillUnmount = () => {
@@ -61,7 +58,7 @@ class Demo extends Component {
     const movableWindow = <div className="movable-window" ref={this.movableWindow}></div>;
     return (
       <div className="demo">
-        {this.state.date && this.state.date.toString()}
+        {this.state.blocks.map(i => <div className="block" key={i}>{i}</div>)}
         {movableWindow}
       </div>
     );
