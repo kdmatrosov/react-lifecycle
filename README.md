@@ -77,6 +77,8 @@
 
 **Нельзя**
 * Не выполняйте ```this.setState``` - приведет к зацикливанию
+
+![shallowEqual](imgs/shallowEqual.key-length.png)
 ---
 #### getSnapshotBeforeUpdate
 **Можно**
