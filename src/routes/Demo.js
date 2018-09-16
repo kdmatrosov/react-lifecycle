@@ -12,14 +12,17 @@ class Demo extends Component {
     this.movableWindow = React.createRef();
     this.showDate = null;
     // bind your functions
+    console.log('constructor');
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
     // run on init // update props // setState
+    console.log('getDerivedStateFromProps');
     return null;
   }
 
   componentDidMount = () => {
+    console.log('componentDidMount');
     const movableWindow = this.movableWindow.current;
     function moveAt(e) {
       movableWindow.style.left = e.pageX + 'px';
@@ -40,16 +43,19 @@ class Demo extends Component {
   };
 
   shouldComponentUpdate = (nextProps, nextState) => {
+    console.log('shouldComponentUpdate');
     return nextState.initialValue === this.state.initialValue;
   };
 
   getSnapshotBeforeUpdate = (prevProps, prevState) => {
+    console.log('getSnapshotBeforeUpdate');
     // use to keep state of uncontrolled components
     const blocks = document.getElementById('for-blocks');
     return blocks.scrollHeight - blocks.scrollTop;
   };
 
   componentDidUpdate = (prevProps, prevState, scroll = 0) => {
+    console.log('componentDidUpdate');
     if (scroll) {
       const blocks = document.getElementById('for-blocks');
       console.log(blocks.scrollHeight - scroll, blocks.scrollTop)
@@ -58,10 +64,12 @@ class Demo extends Component {
   };
 
   componentWillUnmount = () => {
+    console.log('componentWillUnmount');
     clearInterval(this.showDate);
   };
 
   render() {
+    console.log('render');
     const movableWindow = <div className="movable-window" ref={this.movableWindow}/>;
     return (
       <div className="demo">

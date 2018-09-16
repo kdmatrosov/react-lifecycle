@@ -4,6 +4,9 @@ import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import Demo from "./routes/Demo";
 
 class App extends Component {
+  componentDidCatch = (error, info) =>{
+    console.log(error,info)
+  };
   render() {
     return (
       <BrowserRouter>
