@@ -11,10 +11,11 @@
     1. [getSnapshotBeforeUpdate](#getsnapshotbeforeupdate)
     1. [componentDidUpdate](#componentdidupdate)
 1. [componentWillUnmount](#componentwillunmount)
-1. [componentDidCatch](#componentdidcatch)
 1. [deprecated](#deprecated)
     1. [Mounting process](#mounting-process)
     1. [Updating process](#updating-process)
+    1. [StrictMode](#sctrictmode)
+1. [componentDidCatch](#componentdidcatch)
 1. [Полезные ссылки](#Полезные-ссылки)
 
 ## Жизненный цикл
@@ -98,8 +99,6 @@
 **Нельзя**
 * Не выполняйте ```this.setState```
 ---
-## componentDidCatch
----
 ## deprecated
 
 * componentWillMount
@@ -134,8 +133,21 @@ getSnapshotBeforeUpdate()
 componentDidUpdate()
 ```
 ---
+#### StrictMode
+
+* Сообщает о "небезопасных" методах lifecycle
+* Предупреждает об использовании устаревшего ```ref API```
+* Сигнализирует о старом ```context API```
+* Отслеживание неожидаемых сайд-эффектов
+
+![StrictMode](imgs/StrictMode.png)
+---
+## componentDidCatch
+---
 ## Полезные ссылки
 
+* [Официальный сайт React.js](https://reactjs.org/)
+* [React 16.3 Lifecycle Methods](https://medium.com/@mksglu/react-16-3-lifecycle-methods-7ac4e2f2024a)
 * [Understanding React — React 16.3 + Component life-cycle](https://medium.com/@baphemot/understanding-react-react-16-3-component-life-cycle-23129bc7a705)
 * [UNSAFE_componentWillReceiveProps()](https://reactjs.org/docs/react-component.html#unsafe_componentwillreceiveprops)
 * [Easy Way to Understand React's Component Lifecycle Methods](https://www.youtube.com/watch?v=UPv-3SYRdZk)

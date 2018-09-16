@@ -28,16 +28,16 @@ class Demo extends Component {
     movableWindow.onmousedown = function (e) {
       document.onmousemove = function (e) {
         moveAt(e);
-      }
+      };
       movableWindow.onmouseup = function () {
         document.onmousemove = null;
         movableWindow.onmouseup = null;
-      }
+      };
     };
     this.showDate = setInterval(() => this.setState((prevState) => ({ date: new Date() }), () => {
       document.getElementById('for-blocks').insertAdjacentHTML("afterBegin", "<div class='block'>" + new Date() + "</div>")
     }), 1000);
-  }
+  };
 
   shouldComponentUpdate = (nextProps, nextState) => {
     return nextState.initialValue === this.state.initialValue;
@@ -46,7 +46,7 @@ class Demo extends Component {
   getSnapshotBeforeUpdate = (prevProps, prevState) => {
     // use to keep state of uncontrolled components
     const blocks = document.getElementById('for-blocks');
-    return blocks.scrollHeight - blocks.scrollTop;;
+    return blocks.scrollHeight - blocks.scrollTop;
   };
 
   componentDidUpdate = (prevProps, prevState, scroll = 0) => {
@@ -62,10 +62,10 @@ class Demo extends Component {
   };
 
   render() {
-    const movableWindow = <div className="movable-window" ref={this.movableWindow}></div>;
+    const movableWindow = <div className="movable-window" ref={this.movableWindow}/>;
     return (
       <div className="demo">
-        <div id="for-blocks"></div>
+        <div id="for-blocks"/>
         {movableWindow}
       </div>
     );
