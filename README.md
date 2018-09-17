@@ -83,9 +83,11 @@
 
 **Нельзя**
 * Не выполняйте ```this.setState``` - приведет к зацикливанию
+ 
+![shallowEqual](imgs/shallowEqual.key-length.png)
 
 При сравнении объектов проверяется количество полей. Хорошее место для "нехорошего" хака
-![shallowEqual](imgs/shallowEqual.key-length.png)
+ 
 ---
 #### getSnapshotBeforeUpdate
 **Можно**
